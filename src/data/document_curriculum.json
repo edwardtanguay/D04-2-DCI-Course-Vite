@@ -1,0 +1,1524 @@
+{
+	"className": "DCI-Course",
+	"modules": [
+		{
+			"title": "1. Basic Digital Literacy",
+			"abbreviation": "BDL"
+		},
+		{
+			"title": "2. User Interface Basics",
+			"abbreviation": "UIB"
+		},
+		{
+			"title": "3. Programming Basics",
+			"abbreviation": "PB",
+			"submodules": [
+				{
+					"title": "3.04 Data Structure",
+					"abbreviation": "DATA",
+					"totalDays": 7,
+					"overview": "Just as natural languages are meant to convey and manipulate ideas, most often programming languages must convey and change data. The Data Structure sub module provides you with tools to structure, iterate, and change data with JavaScript.",
+					"objectives": [
+						"Compare between primitive and referential Data Types in terms of their relation to the computer’s memory",
+						"Create, access, manipulate and convert between arrays and objects in JavaScript",
+						"Use higher order array methods in order to manipulate arrays in JavaScript"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-03-01",
+							"title": "Overview ES6 Higher Order Functions",
+							"videos": [
+								{
+									"description": "Overview ES6 Higher Order Functions (03:53:00)",
+									"url": "https://us02web.zoom.us/rec/share/-B4ADa5ofphxJ1qvkISRL6mGqk7RLhtMHVSHnqMnsTR1QhTbayhJOn0k0ZSyqb-b.2_JE_Te_-NwVlo1j"
+								}
+							],
+							"activities": [
+								{
+									"kind": "explanation",
+									"title": "Pre-ES6 toolkit",
+									"outline": "- `for` (sequences)\r\n- `for-in` (object properties)\r\n- `for-of` (simple arrays)\r\n- `Object.keys`\r\n- `Object.values`\r\n- `Object.entries`\r\n- property bracket notation\t\r\n- clones vs. references\t\r\n\t- array\/object\r\n\t\t- heap\r\n\t\t- the variable saves just a reference!\r\n\t- string\/number\/boolean\r\n\t\t- stack\r\n\t\t- the variables saves the value\r\n"
+								},
+								{
+									"kind": "explanation",
+									"title": "ES6 Higher-Order Array Function Toolkit",
+									"outline": "- [forEach] (https:\/\/www.w3schools.com\/jsref\/jsref_foreach.asp) (loops)\r\n- [filter](https:\/\/www.w3schools.com\/jsref\/jsref_filter.asp) (find many)\r\n- [find](https:\/\/www.w3schools.com\/jsref\/jsref_find.asp) (find one)\r\n- [map](https:\/\/www.w3schools.com\/jsref\/jsref_map.asp) (convert each item in array into another array, same size)\r\n- [reduce](https:\/\/www.w3schools.com\/jsref\/jsref_reduce.asp) (use each item to build new variable, most flexible, powerful)"
+								},
+								{
+									"kind": "explanation",
+									"title": "Other Array-Function Toolkit",
+									"outline": "\r\n- [push](https:\/\/www.w3schools.com\/jsref\/jsref_push.asp)\/[pop](https:\/\/www.w3schools.com\/jsref\/jsref_pop.asp) - [unshift](https:\/\/www.w3schools.com\/jsref\/jsref_unshift.asp)\/[shift](https:\/\/www.w3schools.com\/jsref\/jsref_shift.asp) (pUsh onto end, Unshift onto front)\r\n- [join](https:\/\/www.w3schools.com\/jsref\/jsref_join.asp) (connect items with empty\/character\/string)\r\n- [sort](https:\/\/www.w3schools.com\/jsref\/jsref_sort.asp) (change order)\r\n- [includes] (https:\/\/www.w3schools.com\/jsref\/jsref_includes_array.asp) (item is in array)\t\r\n- [slice](https:\/\/www.w3schools.com\/jsref\/jsref_slice_array.asp) (cut items out)\r\n- [splice](https:\/\/www.w3schools.com\/jsref\/jsref_splice.asp) (remove ro add - splice removes the \"p\" in splice)\r\n- [reverse](https:\/\/www.w3schools.com\/jsref\/jsref_reverse.asp) (changes order of items)\r\n- [concat](https:\/\/www.w3schools.com\/jsref\/jsref_concat_array.asp) (add arrays)\r\n- [every](https:\/\/www.w3schools.com\/jsref\/jsref_every.asp) (all pass test)\r\n- [some](https:\/\/www.w3schools.com\/jsref\/jsref_some.asp) (some pass test)\r\n- [indexOf](https:\/\/www.w3schools.com\/jsref\/jsref_indexof_array.asp) (find item, return index)\r\n- [lastIndexOf](https:\/\/www.w3schools.com\/jsref\/jsref_lastindexof_array.asp) (find last item, return index)\r\n- [findIndex](https:\/\/www.w3schools.com\/jsref\/jsref_findindex.asp) (indexOf but [allows callback](https:\/\/stackoverflow.com\/a\/61884089\/4639))\r\n"
+								},
+								{
+									"kind": "explanation",
+									"title": "Difference between JSON and JavaScript objects",
+									"outline": "- for today's live-coding and exercises, we need some realistic, complex JavaScript objects\r\n- we will be using the realistic [Northwind database converted to JSON files](https:\/\/github.com\/graphql-compose\/graphql-compose-examples\/tree\/master\/examples\/northwind\/data\/json)\r\n\t- each former SQL table has been converted into a JSON file\r\n\t- we will use an online tool to convert these JSON files into JavaScript objects so we can use them in a JavaScript file and execute them with Node\r\n- the differences between JSON and JavaScript Objects\r\n\t- GOOD NEWS: **JSON is 98% JavaScript objects**\r\n\t- JavaScript created 1995, JSON created 2001\r\n\t- JSON stands for JavaScript Object Notation\r\n\t- JSON was made to transport JavaScript objects from application to application and so has a few differences in order to make the journey safe\r\n\t- **keys must be wrapped double quotation marks**\r\n\t- **string values must use double quotation marks**, not single quotation marks\r\n\t- **JSON does not allow a trailing comma**\r\n- advantages of JSON\r\n\t- just like JavaScript objects, JSON can contain any number of levels deep of objects in arrays in arrays in objects\r\n\t- this makes JSON a very rich storage and data medium\r\n\t- JSON is arguably a reason that NoSQL became so popular and successful from 2000-2010\r\n\t- many NoSQL databases such as MongoDB use JSON as their base format to store data\r\n\t- once you know the above simple rules, using JSON is as easy as using JavaScript objects"
+								},
+								{
+									"kind": "liveCoding",
+									"title": "Array function practice with realistic data",
+									"outline": "See: [Howto: Use Northwind JSON files to practice JavaScript array functions](https://edwardtanguay.netlify.app/howtos?id=510)"
+								},
+								{
+									"kind": "exercise",
+									"title": "Practice array functions with realistic data",
+									"url": "https://github.com/edwardtanguay/Exercise-301-PB-DATA-practiceArrayFunctionsWithRealisticData",
+									"description": "Convert Northwind JSON files to JavaScript objects and practice querying and manipulating data with JavaScript array functions.",
+									"released": true
+								}
+							]
+						},
+						{
+							"date": "2022-03-02",
+							"title": "Higher-order ES6 functions with JavaScript modules",
+							"videos": [
+								{
+									"description": "2020-03-02_higher_order_functions",
+									"url": "https://drive.google.com/file/d/1I3cAX__ZoIktch6T_gyuEx0wMGhuVFm0"
+								}
+							],
+							"activities": [
+								{
+									"kind": "liveCoding",
+									"title": "Join JavaScript arrays with ES6 functions in Export/Import modules",
+									"outline": "- See: [Join JavaScript arrays with ES6 functions in Export/Import modules](https://edwardtanguay.netlify.app/howtos?id=511)"
+								},
+								{
+									"kind": "exercise",
+									"title": "Practice array functions with modules",
+									"url": "https://github.com/edwardtanguay/Exercise-302-PB-DATA-practiceArrayFunctionsWithModules/tree/main",
+									"description": "Use JavaScript modules to practice using the ES6 higher-order functions",
+									"released": true
+								}
+							]
+						},
+						{
+							"date": "2022-03-03",
+							"title": "Final project presentation and ES6 function review",
+							"videos": [
+								{
+									"description": "2020-03-03_Giacomo_presentation_and_ex302_es6_functions",
+									"url": "https://us02web.zoom.us/rec/share/_vdrxWSr5KtFxSScUJctu3iHLvN7uJpHWjF2zWDS_u0WG9oeyho1IHc_gHlZ_lge.Ku_tncPmeqvCfbk4"
+								}
+							],
+							"activities": [
+								{
+									"kind": "activity",
+									"title": "Giacomo: Final project presenation, \"Common Destination\"",
+									"outline": "- [online site](https:\/\/commondestination.netlify.app)\r\n- [repository](https:\/\/github.com\/common-destination)"
+								},
+								{
+									"kind": "activity",
+									"title": "Discuss exercise 302",
+									"outline": "- live-coded and discussed answers to [Exercise 302](https://github.com/edwardtanguay/Exercise-302-PB-DATA-practiceArrayFunctionsWithModules/tree/main)"
+								}
+							]
+						}
+					]
+				},
+				{
+					"title": "3.05 Functions-II",
+					"abbreviation": "FUNC2",
+					"totalDays": 2,
+					"overview": "Functions are the building blocks of big applications, understanding how to reuse common pieces of logic is a necessary fundamental. In this sub module, you will dive deep into the world of functions and gain practice with more complex logical problems.",
+					"objectives": [
+						"Understand the definition of callback functions and their uses",
+						"Understand the definition of closures and their uses",
+						"Understand the definition of recursive functions and their uses"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-03-07",
+							"title": "Closure, Recursion and Callbacks",
+							"videos": [
+								{
+									"description": "LIVE-CODING: Closure, Recursion, Callbacks (02:18:00)",
+									"url": "https://us02web.zoom.us/rec/share/armI8J771_BoDQB3VvGV7StOBdK7Bp9luhIZJuVCxsWRkD_vnd90qaBLAjyY0Q6L.Yp-MyhaJkEopQiOC"
+								}
+							],
+							"activities": [
+								{
+									"kind": "explanation",
+									"title": "Closure, Recursion, Callbacks: Three Concepts Good to Know",
+									"outline": "- **closure** \r\n\t- functions inside functions carry with them their own scope\r\n\t- a way to emulate private scope\r\n\t- today use **ES6 classes**\r\n- **recursion** \r\n\t- functions that call themselves until a certain condition is met\r\n\t- the only way to solve [some problems](https:\/\/stackoverflow.com\/questions\/71166355\/how-create-array-containing-all-combinations-of-array-1-n-array-items)\r\n- **callbacks** \r\n\t- functions that are sent as parameters into other functions\r\n\t- a central concept in functional programming\r\n\t- a very important concept to understand\r\n\t- ES6 high-order functions\r\n\t- as **non-blocking code solution**, largely replaced by JavaScript promises and **async\/await**"
+								},
+								{
+									"kind": "liveCoding",
+									"title": "JavaScript Closures",
+									"outline": "- Howto: [JavaScript Closures](https://edwardtanguay.netlify.app/howtos?id=513)"
+								},
+								{
+									"kind": "liveCoding",
+									"title": "JavaScript Recursion",
+									"outline": "- Howto: [JavaScript Recursion](https://edwardtanguay.netlify.app/howtos?id=514)"
+								},
+								{
+									"kind": "liveCoding",
+									"title": "JavaScript Callbacks",
+									"outline": "- Howto: [JavaScript Callbacks](https://edwardtanguay.netlify.app/howtos?id=515)"
+								},
+								{
+									"kind": "exercise",
+									"title": "Closure, Recursion and Callbacks",
+									"url": "https://github.com/edwardtanguay/Exercise-303-PB-FUNC2-closureRecursionAndCallbacks",
+									"description": "Closure, Recursion and Callbacks are three concepts that are quite important in advanced JavaScript. This exercise allows you to demonstrate that you understand the basics of these three concepts.",
+									"released": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"title": "3.06 Classes",
+					"abbreviation": "CLASS",
+					"totalDays": 4,
+					"overview": "Classes are a fundamental part of Object-Oriented Programming and important to understand in any programming language that supports the OOP paradigm. Since ES6, JavaScript has offered minimal functionality for structuring your code in classes. In addition to the functional programming approach, the OOP programming paradigm is a important aspect of JavaScript programming.",
+					"objectives": [
+						"Understand scope and state in relation to objects and explain the this and new keywords in that context",
+						"Declare and write classes in JavaScript to produce objects of the same structure",
+						"Compare between a static class and an instance in JavaScript",
+						"Understand basic algorithm complexity and its relation to data structures"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-03-09",
+							"title": "Basic JavaScript Classes",
+							"videos": [
+								{
+									"description": "2022-03-09 Live-Codings: JavaScript Class Basics (04:50:00)",
+									"url": "https://us02web.zoom.us/rec/share/nBKzzKiHaLsxfysSpqPMDVzZb-n-Cw9ly6QaRzBeM7V3gPFeX1YBRgxm_LQsbl4.GF5T7G-qiiOLLYU-"
+								}
+							],
+							"activities": [
+								{
+									"kind": "explanation",
+									"title": "Classes in JavaScript",
+									"outline": "- real-life example: [DynamicFile](https:\/\/github.com\/edwardtanguay\/n49900_tech\/blob\/master\/systemClasses\/dynamicFile.js)\r\n- 10 most important concepts of JavaScript classes\r\n\t- basics\r\n\t\t- 1. keyword: **class**\r\n\t\t- 2. **constructor**\r\n\t\t- 3. **methods**\r\n\t\t- 4. **properties**\r\n\t\t- 5. keyword: **this**\r\n\t\t- 6. **static methods**\r\n\t\t- 7. vocabulary: **instantiate**\/**object**\/**class**\/**new**, e.g. \"you instantiate an object with a class using the `new` keyword\", \"the variable `bike` is an instance of the class `Bike`\"\r\n\t- inheritance\r\n\t\t- 8. keyword: **extends**\r\n\t\t- 9. keyword: **super**\r\n\t\t- 10. **method overriding**\r\n- differences of JavaScript classes to classes of other languages\r\n\t- in JavaScript, a newer, added feature\r\n\t\t- 1995 Java - classes are core feature\r\n\t\t- 2001 C# - classes are core feature\r\n\t\t- 2005 PHP adds classes as core feature\r\n\t\t- 2015 JavaScript adds classes are syntactic sugar\r\n\t- Java\/C#\/PHP\/TypeScript have more OOP robust features:\r\n\t\t- private\/public\/protected\/internal\r\n\t\t- abstraction\r\n\t\t- interfaces\r\n\t\t- method overloading\r\n- OOP vs. Functional programming\r\n\t- big data\r\n\t\t- SQL --> NoSQL\r\n\t\t- OOP --> functional programming\r\n\t- React: class components <-- React 16.8 (Feb 2019) --> functional components with hooks\r\n- Why use classes?\r\n\t- they produce organized, understandable code\r\n\t- tend to eliminate duplicate code\r\n\t- they emulate objects and relationships in the world one-to-one\r\n\t\t- Mancala\r\n\t\t- FileManager\r\n\t\t\t- BinaryFileManager\r\n\t\t\t\t- ExcelFileManager\r\n\t\t\t\t- WordFileManager\r\n\t\t\t- TextFileManager\r\n\t\t\t\t- JsonFileManager\r\n\t\t\t\t- JavaScriptFileManager\r\n\t\t\t\t- PlainTextFileManager"
+								},
+								{
+									"kind": "liveCoding",
+									"title": "Create bookstore app",
+									"outline": "- create app to organize books\r\n- add magazines\r\n- add postcards\r\n- add feature: create books via JSON import\r\n- add plural class Products\r\n"
+								},
+								{
+									"kind": "exercise",
+									"title": "Create apps with JavaScript classes",
+									"url": "https://github.com/D04-2/Exercise-304-PB-CLASS-createAppsWithJavaScriptClasses",
+									"description": "Use your knowledge of JavaScript classes to create the apps listed here: build the appropriate classes, instantiate the classes as objects, and call the appropriate methods on the objects to make your app work.",
+									"released": true
+								}
+							]
+						},
+						{
+							"date": "2022-03-10",
+							"title": "Advanced JavaScript Classes",
+							"videos": [
+								{
+									"description": "2022-03-10-LIVE-CODING-ex303-ex304-oop-design-patterns",
+									"url": "https://drive.google.com/file/d/1-TmHuf-jeV-Q1bG3rZhdunpH2bhkWeHz/view"
+								}
+							],
+							"activities": [
+								{
+									"kind": "liveCoding",
+									"title": "Design patterns with JavaScript classes: Singleton and Factory",
+									"outline": "- Howto: [Design patterns with JavaScript classes: Singleton and Factory](https://edwardtanguay.netlify.app/howtos?id=517)"
+								},
+								{
+									"kind": "exercise",
+									"title": "Create examples of Singleton and Factory patterns with JavaScript Classes",
+									"url": "https://github.com/D04-2/Exercise-305-PB-CLASS-createExamplesOfSingletonAndFactoryPatternsWithJavaScriptClasses",
+									"description": "Use your knowledge of JavaScript classes and OOP to create an example of the Singleton and Factory patterns.",
+									"released": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"title": "3.07 PB-Review/Test and JavaScript Project",
+					"abbreviation": "PROJ",
+					"totalDays": 8,
+					"overview": "The goal of this module is to create a JavaScript project that showcases your JavaScript skills and hopefully is a project which you will continue building as we move into the SPA module and beyond, perhaps even evolving into a final project idea. We will also prepare for and take the JavaScript test to make sure you have learned the main points of JavaScript in this module.",
+					"objectives": [
+						"Review most important JavaScript skills: higher-order functions (forEach, map, reduce, find, filter, sort), object/array iteration, and class basics",
+						"Learn low-hanging-fruit skills to improve JavaScript project (Netlify sites with JavaScript/DOM and create-react-app)",
+						"Take PB Test (with Jest)",
+						"Complete JavaScript project"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-03-14",
+							"title": "Publish JavaScript/DOM site to Netlify",
+							"videos": [
+								{
+									"description": "LIVE-CODING-VIDEO: Publish JavaScript/DOM site to Netlify, 3 Std., Kennwort: $4!3ZLSr",
+									"url": "https://us02web.zoom.us/rec/share/qUINc76AuesIQ3Gm0IRoNYYhb6ClIBxBD6t9yhyjHq5RIHsHEqAGeY043z-_Vghc.6esEc3I2PWupU2pR"
+								}
+							],
+							"activities": [
+								{
+									"kind": "liveCoding",
+									"title": "Create and publish data-driven JavaScript/DOM app with ES6 modules to Netlify",
+									"outline": "- Howto: [Create and publish data-driven JavaScript/DOM app with ES6 modules to Netlify](https://edwardtanguay.netlify.app/howtos?id=522)"
+								},
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								}
+							]
+						},
+						{
+							"date": "2022-03-15",
+							"title": "Practice for Programming-Basics Test",
+							"videos": [
+								{
+									"description": "2022-03-15-LiveCoding-jest-pbtestpractice-jsdomsite",
+									"url": "https://drive.google.com/file/d/11aF4LkRp-OsA_czr1ClUE9IwrIKVuho-/view"
+								}
+							],
+							"activities": [
+								{
+									"kind": "liveCoding",
+									"title": "Programming Basics Test Practice (with Jest)",
+									"outline": "- PB practice test (German): [D04-2\/pb-adv-test-practice](https:\/\/github.com\/D04-2\/pb-adv-test-practice\/blob\/master\/README%20(de).md)\r\n\t- Bad translation, z.B. **array** methods = **Feld**-Methoden\r\n- PB practice test (English): [D04-2\/pb-adv-test-practice](https:\/\/github.com\/D04-2\/pb-adv-test-practice\/blob\/master\/README.md)\r\n- clone project locally\r\n- look in package.json\r\n- install npm packages: `npm i`\r\n- run Jest tests: `npm test`\r\n- understand Jest by example\r\n\t- see project from yesterday with Jest instructions added: [Create and publish data-driven JavaScript\/DOM app with ES6 modules to Netlify](https:\/\/edwardtanguay.netlify.app\/howtos?id=522)\r\n\t- use Jest to test the two functions\r\n- work through practice test"
+								},
+								{
+									"kind": "activity",
+									"title": "Live-Coding: JavaScript/DOM site with data-based menu and pseudo login",
+									"outline": "- Howto: [JavaScript/DOM app with data-driven menu and pseudo-login](https://edwardtanguay.netlify.app/howtos?id=523)"
+								},
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								}
+							]
+						},
+						{
+							"date": "2022-03-16",
+							"title": "Publish create-react-app site to Netlify",
+							"videos": [
+								{
+									"description": "2022-03-16-live-coding-react-json-netlify-apis",
+									"url": "https://drive.google.com/file/d/1YMk4UnXOhkSTlmDAj26CkA6kCUPWp-Zy/view"
+								},
+								{
+									"description": "2022-03-16-live-coding-js-dom-login-access-rights",
+									"url": "https://drive.google.com/file/d/1DdyIm5um7uPZIspgnaIbUSaiAlEijhTI"
+								}
+							],
+							"activities": [
+								{
+									"kind": "liveCoding",
+									"title": "Create and publish JSON-driven create-react-app to Netlify",
+									"outline": "- this live-coding is optional\n\t- in the SPA module, we will do a week of JavaScript/DOM and then basically learn React until mid-June\n\t- this live-coding is merely a preview\n\t- but React is an bottomless learn-pit, so it is never too early to get into React\n\t- feel free to follow along as long as you want, otherwise we have the whole day to plan, discuss and work on JavaScript projects\n- the purpose of this live-coding is:\n\t- to show that creating a JSON-driven site with create-react-app and publishing it to Netlify is easy \n\t- demonstrate that--without knowing React--you can use React as the basis of your JavaScript project if it is merely to publish a site where you display data from a JSON file\n\t- make React approachable, reduce the fear of React\n- plan for this live-coding\n\t- 1. create and publish JSON-driven React website at Netlify\n\t\t- `npx create-react-app`\n\t\t- clean up\n\t\t- personalize\n\t\t- add SASS\n\t\t- add JSON file \n\t\t- display data from JSON\n\t\t- publish to Netlify\n\t- 2. experiment with React, discover what you know already\n\t\t- interactions?\n\t\t- state?\n\t\t- forms?\n\t\t- API?\n\t\t- TypeScript?\n\t\t- etc?\t"
+								},
+								{
+									"kind": "activity",
+									"title": "Live-Coding: JavaScript/DOM site with data-based menu and pseudo login",
+									"outline": "- Howto: [JavaScript/DOM app with data-driven menu and pseudo-login](https://edwardtanguay.netlify.app/howtos?id=523)"
+								},
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								}
+							]
+						},
+						{
+							"date": "2022-03-17",
+							"title": "Take Programming-Basics Test",
+							"videos": [
+								{
+									"description": "2022-03-17-live-coding-js-dom-login-page-to-error",
+									"url": "https://drive.google.com/file/d/1oPxHkJ-NAAd9A1dVWulExsbF_9lTreRW"
+								}
+							],
+							"activities": [
+								{
+									"kind": "activity",
+									"title": "9:00-10:30 Programming Basics Advanced Test",
+									"outline": "- 90 minutes to solve 10 programming tasks"
+								},
+								{
+									"kind": "activity",
+									"title": "Live-Coding: Add login ability to JavaScript/DOM site ",
+									"outline": "- Howto: [JavaScript/DOM app with data-driven menu and pseudo-login](https://edwardtanguay.netlify.app/howtos?id=523)"
+								},
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								}
+							]
+						},
+						{
+							"date": "2022-03-21",
+							"title": "Work on JavaScript projects",
+							"videos": [
+								{
+									"description": "2022-03-21-live-coding-js-dom-fix-login-read-json",
+									"url": "https://drive.google.com/file/d/1gFmm383SjkZpOnWF52IitFIk91t31mVs"
+								}
+							],
+							"activities": [
+								{
+									"kind": "activity",
+									"title": "9:00 JavaScript Project Status: done vs. todo",
+									"outline": "- show status of project\n- what have you done\n- what is left to do"
+								},
+								{
+									"kind": "activity",
+									"title": "Live-Coding: DOM-JavaScript Site with Menu and Pseudo Login",
+									"outline": "- Howto: [JavaScript/DOM app with data-driven menu and pseudo-login](https://edwardtanguay.netlify.app/howtos?id=523) and Repo: [edwardtanguay/dom-js-menu-pseudo-login](https://github.com/edwardtanguay/dom-js-menu-pseudo-login)"
+								},
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								}
+							]
+						},
+						{
+							"date": "2022-03-22",
+							"title": "Work on JavaScript projects",
+							"videos": [
+								{
+									"description": "2022-03-22-liveCoding-discussion-jwt-rights-management",
+									"url": "https://drive.google.com/file/d/1VFXBNCd0fkuNt9PzKEndS6PbEvxmflH7"
+								},
+								{
+									"description": "2022-03-22-read-excel-file-from-node-create-json-file",
+									"url": "https://drive.google.com/file/d/1LV_1-6c06E8kZ1fAUVcLlfSuZAVjcWqd"
+								}
+							],
+							"activities": [
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								}
+							]
+						},
+						{
+							"date": "2022-03-23",
+							"title": "Work on JavaScript projects",
+							"videos": [],
+							"activities": [
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								}
+							]
+						},
+						{
+							"date": "2022-03-24",
+							"title": "Present JavaScript projects",
+							"videos": [
+								{
+									"description": "2022-03-24-javascript-presentations",
+									"url": "https://drive.google.com/file/d/1uFxKWqgiUCrFhCPpXbSvJIsOjSdlmO65"
+								}
+							],
+							"activities": [
+								{
+									"kind": "activity",
+									"title": "Work on JavaScript projects",
+									"outline": "- work alone or in groups"
+								},
+								{
+									"kind": "activity",
+									"title": "13:00 Present JavaScript projects",
+									"outline": "- each person will have 10 minutes to show their project"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "4. Single-Page-Application",
+			"abbreviation": "SPA",
+			"submodules": [
+				{
+					"title": "4.01 DOM",
+					"abbreviation": "DOM",
+					"totalDays": 4,
+					"overview": "Understanding the built-in DOM APIs in the browser is the first stepping stone in creating a truly dynamic experience. In this sub module, you will be acquainted with writing JavaScript for the browser environment and using it to explore and manipulate the document structure. Making the web interactive requires us to attach functionality and react to actions the user might perform on the page.",
+					"objectives": [
+						"Add scripts to an HTML document",
+						"Select, add, remove and manipulate elements from the DOM",
+						"Add and remove event listeners to and from elements in the DOM",
+						"Use common keyboard, mouse and form events to execute code",
+						"Use event delegation techniques to optimize the user experience"
+					],
+					"days": [
+						{
+							"date": "2022-03-28",
+							"title": "DOM Overview and Deep Dive",
+							"videos": [
+								{
+									"description": "2022-03-28-live-coding-dom-basics-day-1",
+									"url": "https://drive.google.com/file/d/1xfqRLifoeoFDPNLJ6MdT-t5xk-o_XalQ"
+								}
+							],
+							"activities": [
+								{
+									"kind": "explanation",
+									"title": "Explanation of the new course structure",
+									"outline": "- goal of course is to have a fun, challenging, well-paying job in November\n- anything you do toward that goal is 100%\n- we will move through the curriculum based on the learn items and tasks for each submodule, the main goal of each submodule is to know how to learn these items"
+								},
+								{
+									"kind": "explanation",
+									"title": "Explanation of the 20 most useful DOM properties and methods",
+									"outline": "- see learn items for the DOM submodule"
+								},
+								{
+									"kind": "liveCoding",
+									"title": "Work through 10 mini DOM projects as a group",
+									"outline": "- use the most important DOM properties and methods to accomplish numberous tasks creating interaction via JavaScript on an HTML page, repository here: [edwardtanguay/livecoding-2022-03-28-tasks](https://github.com/edwardtanguay/livecoding-2022-03-28-tasks)"
+								}
+							]
+						},
+						{
+							"date": "2022-03-29",
+							"title": "DOM Overview and Deep Dive",
+							"videos": [
+								{
+									"description": "2022-03-28-live-coding-string-literals-vs-createElement",
+									"url": "https://drive.google.com/file/d/10-DY-9bVZC2CaT5rAzHWZoy0y1eigo-4"
+								}
+							],
+							"activities": [
+								{
+									"kind": "explanation",
+									"title": "Explanation of DOM properties and methods: 20-50",
+									"outline": "- see learn items for the DOM submodule"
+								},
+								{
+									"kind": "liveCoding",
+									"title": "Two approaches to building DOM: innerHTML/string-literals vs. createElement/appendChild",
+									"outline": "- use the most important DOM properties and methods to accomplish numerous tasks creating interaction via JavaScript on an HTML page, repository here: [edwardtanguay/livecoding-2022-03-28-tasks](https://github.com/edwardtanguay/livecoding-2022-03-28-tasks)"
+								}
+							]
+						}
+					],
+					"resources": [],
+					"flashcards": [
+						{
+							"front": "What does DOM stand for?",
+							"back": "Document Object Model",
+							"tags": "assessment"
+						},
+						{
+							"front": "Name four browsers and the JavaScript Engines they use.",
+							"back": "- **Google Chrome** uses **V8**\r\n- **Firefox** uses **SpiderMonkey**\r\n- **Safari** uses **JavaScriptCore**\r\n- **Microsoft Edge** formerly used Chakra but now is based on Chromium and hence uses **V8** as Chrome does",
+							"tags": "assessment"
+						},
+						{
+							"front": "What is the difference between a tag and an element on an HTML page?",
+							"back": "Technically, an HTML **element** is the collection of its **start tag** and **end tag** and everything in between. So technically, a **tag** is used to mark the start or end of an **element**. However in common usage the terms element and tag are **often used interchangeably**.",
+							"tags": "assessment"
+						},
+						{
+							"front": "What tag do you use to add JavaScript to an HTML page?",
+							"back": "`<script>`",
+							"tags": "assessment"
+						},
+						{
+							"front": "What tag do you use to add CSS to an HTML page?",
+							"back": "`<style>`",
+							"tags": "assessment"
+						},
+						{
+							"front": "In JavaScript, what are differences between and examples of native and host objects?",
+							"back": "- native object \r\n\t- objects in an ECMAScript implementation whose semantics are fully defined by this specification rather than by the host environment\r\n\t- EXAMPLES: String, Math, RegExp, Object, Function\r\n- host object\r\n\t- objects provided by the browser environment which are distinct from native objects because not all environments will have the same host objects\r\n\t- EXAMPLES IN BROWSER: `window`, `XmlHttpRequest`, `History`\r\n\t- EXAMPLES IN NODE: `http`, `https`, `fs`, `url`, `os`  \r\n\t\t- `const url = require('url');`\r\n\t\t- `const fs = require('fs');`",
+							"moreInfos": [
+								{
+									"title": "Stack Overflow: What is the difference between native objects and host objects?",
+									"url": "https://stackoverflow.com/questions/7614317/what-is-the-difference-between-native-objects-and-host-objects"
+								}
+							],
+							"tags": "assessment"
+						},
+						{
+							"front": "What object on the browser will 'console.log(this)' return?",
+							"back": "`Window`",
+							"tags": "assessment"
+						},
+						{
+							"front": "In a simple Node script, what will 'console.log(this)' return?",
+							"back": "`object`",
+							"moreInfos": [
+								{
+									"title": "Stack Overflow: Why does console.log(this) in node return an empty object?",
+									"url": "https://stackoverflow.com/questions/42631698/why-does-console-logthis-in-node-return-an-empty-object"
+								}
+							],
+							"tags": "assessment"
+						},
+						{
+							"front": "Name two ways you can get a single HTML element into a JavaScript variable?",
+							"back": "- `document.getElementById()`\r\n- `document.querySelector()`",
+							"tags": "assessment"
+						},
+						{
+							"front": "How can you get a numerous elements into a JavaScript variable?",
+							"back": "`document.querySelectorAll()`",
+							"tags": "assessment"
+						},
+						{
+							"front": "What does `Element.classList` do?",
+							"back": "A CSS property that returns the class names of an element, as an array-like DOMTokenList object",
+							"moreInfos": [
+								{
+									"title": "W3Schools: HTML DOM classList Property",
+									"url": "https://www.w3schools.com/jsref/prop_element_classlist.asp"
+								},
+								{
+									"title": "MDN: Element.classList",
+									"url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"
+								}
+							],
+							"rank": 4.5,
+							"tags": "assessment"
+						},
+						{
+							"front": "Name two ways to add text to an HTML element?",
+							"back": "- `Element.innerHTML`\r\n- `Element.innerText`",
+							"rank": 4.9,
+							"tags": "assessment"
+						},
+						{
+							"front": "Name 10 examples of JavaScript events.",
+							"back": "- `change`: An HTML element has been changed\r\n- `click`: The user clicks an HTML element\r\n- `mouseover`: The user moves the mouse over an HTML element or its children\r\n- `mouseenter`: the user moves the mouse into an HTML element\r\n- `mousemove`: The user moves the mouse inside an HTML element\r\n- `mouseout`: The user moves the mouse away from an HTML element\r\n- `keydown`: The user pushes a keyboard key\r\n- `load`: The browser has finished loading the page\r\n- `submit`: The user submits a form\r\n- `keyup`: The user releases a key on the keyboard",
+							"moreInfos": [
+								{
+									"title": "JavaScript Event Types",
+									"url": "https://data-flair.training/blogs/javascript-event-types"
+								}
+							],
+							"tags": "assessment"
+						},
+						{
+							"front": "What does `Event.preventDefault` do?",
+							"back": "- stops default action\/behavior on the event it was called upon\r\n- it cancels the event, meaning that any default action normally taken by the implementation as a result of the event will not occur\r\n- e.g. prevent the link above from following the URL, or prevent the form from submitting data",
+							"tags": "assessment"
+						},
+						{
+							"front": "When was the first version of DOM published, and why was it so important?",
+							"back": "DOM Level 1 was published as a W3C Recommendation in **1998** in order to standardize the different implementations of the Netscape Navigator and Internet Explorer known as **the browser wars**."
+						}
+					],
+					"toolItems": [
+						{
+							"title": "script",
+							"rank": 4.8,
+							"notes": "- [w3schools](https://www.w3schools.com/tags/tag_script.asp)\n- know its `defer` and `type=\"module\"` attributes",
+							"kind": "DOM Element"
+						},
+						{
+							"title": "window object",
+							"rank": 4.7
+						},
+						{
+							"title": "textContent",
+							"notes": "- **textContent** gets the content of all elements, including `<script>` and `<style>` elements\n- **innerText** only shows human-readable elements@@BVBtbYh3YSU",
+							"rank": 4.5,
+							"kind": "Element property"
+						},
+						{
+							"title": "prompt",
+							"rank": 0.2
+						},
+						{
+							"title": "alert",
+							"rank": 0.4
+						},
+						{
+							"title": "document",
+							"rank": 4.9,
+							"kind": "DOM object",
+							"notes": "- a tree structure representing every element of the HTML document##documentElementStructure\n- [Wiki](https://en.wikipedia.org/wiki/Document_Object_Model)"
+						},
+						{
+							"title": "getElementById",
+							"rank": 4.1
+						},
+						{
+							"title": "querySelector",
+							"rank": 4.9,
+							"kind": "Element method",
+							"notes": "- w3schools: [querySelector](https://www.w3schools.com/jsref/met_document_queryselector.asp)\n- you can use any CSS: [example](https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/spa/js/main.js)\n\t-------------------------------\n\tconst navHomeElem = document.querySelector('nav ul li:nth-child(1)');\n\tnavHomeElem.addEventListener('click', () => {\n\t\thideAllPages();\n\t\tpageHomeElem.style.display = 'block';\n\t});\n\t-------------------------------"
+						},
+						{
+							"title": "querySelectorAll",
+							"notes": "- w3schools: [querySelectorAll](https://www.w3schools.com/jsref/met_document_queryselectorall.asp)\n- get all `class=\"page\"` elements on the page: \n\t--------------------------------------\n\tconst pageElems = document.querySelectorAll('.page');\t\n\t--------------------------------------\n- note that querySelectorAll returns a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)\n\t- it does not return an array\n\t- NodeList has `forEach`, `entries`, `keys`, and `values` \n\t- but it does not have e.g. `map`, `find`, `filter`\n\t- you can convert a NodeList to an array so you can use `map`, `find`, `filter`\n\t\t- you can use `Array.from`\n\t\t\t----------------------\n\t\t\tconst arrPageElems = Array.from(pageElems);\n\t\t\t----------------------\n\t\t- or you can use the ES6 spread operator\n\t\t\t--------------------------\n\t\t\tconst arrPageElems = [...pageElems];\n\t\t\t--------------------------",
+							"kind": "Element method",
+							"rank": 4.9
+						},
+						{
+							"title": "style",
+							"rank": 4.8
+						},
+						{
+							"title": "focus",
+							"rank": 4.4,
+							"notes": "- the focus event occurs when an element gets focus, e.g. a texbox\n\t---------------------------------------------\t\n\t<input class=\"info\" type=\"text\"\t/>\n\n\tconst infoElem = document.querySelector('.info'); \n\tinfoElem.addEventListener('focus', () => {\n\t\tmessageElem.style.backgroundColor = 'yellow';\n\t});\n\t---------------------------------------------\n- w3schools: [focus](https://www.w3schools.com/jsref/event_onfocus.asp)",
+							"kind": "Element event"
+						},
+						{
+							"title": "classList",
+							"rank": 4.7
+						},
+						{
+							"title": "innerText",
+							"rank": 4.8
+						},
+						{
+							"title": "innerHTML",
+							"notes": "- w3schools: [innerHTML](https://www.w3schools.com/jsref/prop_html_innerhtml.asp)\n- you can fill the content of an element with HTML text\n\t-----------------------------\n\tcellButton.innerHTML = '<button class=\"btnEdit\">Edit</button>';\n\t-----------------------------\n- you can also use string literals with backticks to fill an element with multiple-line HTML\n\t-----------------------------------\n\tlastNameElem.innerHTML = `\n\t<div>\n\t\t<input value=\"${lastNameElem.innerText}\"/>\n\t</div>\n\t`;\n\t-----------------------------------",
+							"kind": "Element property",
+							"rank": 4.9
+						},
+						{
+							"title": "document.write()",
+							"rank": 0.1
+						},
+						{
+							"title": "createElement",
+							"rank": 4.7
+						},
+						{
+							"title": "appendChild",
+							"rank": 4.7
+						},
+						{
+							"title": "previousSibling",
+							"rank": 4.2
+						},
+						{
+							"title": "previousElementSibling",
+							"rank": 3.1
+						},
+						{
+							"title": "closest",
+							"rank": 4.1
+						},
+						{
+							"title": "matches",
+							"rank": 3.3,
+							"notes": "- [w3school matches](https://www.w3schools.com/jsref/met_element_matches.asp)"
+						},
+						{
+							"title": "children",
+							"rank": 3.6
+						},
+						{
+							"title": "addEventListener",
+							"notes": "- enables you to attach an event to an element\n- this element can be a button or any other element, e.g. DIV\n- if you attach an event to a non-button element, you may want to add a `cursor: pointer` style to it give the user a visual cue that it is clickable\n- example\n\t-------------------------------------------\n\tbtnEditElem.addEventListener('click', () => {\n\t\tconst firstNameElem = btnEditElem.parentElement.parentElement.children[0];\n\t\tconst lastNameElem = btnEditElem.parentElement.parentElement.children[1];\n\t\tfirstNameElem.innerHTML = `<input value=\"${firstNameElem.innerText}\"/>`;\n\t\tlastNameElem.innerHTML = `<input value=\"${lastNameElem.innerText}\"/>`;\n\t});\n\t-------------------------------------------\n- w3schools: [addEventListener](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)",
+							"kind": "Element method",
+							"rank": 4.9
+						},
+						{
+							"title": "firstElementChild",
+							"rank": 4.0
+						},
+						{
+							"title": "lastElementChild",
+							"rank": 4.0
+						},
+						{
+							"title": "tagName",
+							"rank": 3.2
+						},
+						{
+							"title": "select",
+							"kind": "event",
+							"rank": 4.5,
+							"notes": "- [w3schools select event](https://www.w3schools.com/jsref/event_onselect.asp)"
+						},
+						{
+							"title": "childNodes",
+							"rank": 4.6
+						},
+						{
+							"title": "firstChild",
+							"rank": 4.4
+						},
+						{
+							"title": "nodeName",
+							"rank": 4.2
+						},
+						{
+							"title": "nodeValue",
+							"rank": 4.2
+						},
+						{
+							"title": "nodeType",
+							"rank": 4.2
+						},
+						{
+							"title": "attributes",
+							"rank": 3.8
+						},
+						{
+							"title": "blur",
+							"rank": 4.5,
+							"kind": "event"
+						},
+						{
+							"title": "childElementCount",
+							"rank": 1.9,
+							"notes": "- [w3schools](https://www.w3schools.com/jsref/prop_element_childelementcount.asp)"
+						},
+						{
+							"title": "className",
+							"rank": 2.9,
+							"notes": "- [w3schools](https://www.w3schools.com/jsref/prop_html_classname.asp)"
+						},
+						{
+							"title": "click",
+							"kind": "Element event",
+							"rank": 4.9,
+							"notes": "- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event)"
+						},
+						{
+							"title": "event: change",
+							"rank": 4.7
+						},
+						{
+							"title": "contextmenu",
+							"rank": 3.3,
+							"notes": "- [w3schools](https://www.w3schools.com/jsref/event_oncontextmenu.asp)"
+						},
+						{
+							"title": "event: ondblclick",
+							"rank": 3.9
+						},
+						{
+							"title": "drag events",
+							"notes": "drag, dragend, dragenter, dragover, dragstart, drop",
+							"rank": 3.5
+						},
+						{
+							"title": "event: input",
+							"rank": 4.3
+						},
+						{
+							"title": "target",
+							"rank": 4.5,
+							"notes": "- [w3schools](https://www.w3schools.com/tags/att_target.asp)\n- hyperlink areas of an image"
+						},
+						{
+							"title": "stopPropagation",
+							"rank": 4.4,
+							"notes": "- [w3schools](https://www.w3schools.com/jsref/event_stoppropagation.asp)"
+						},
+						{
+							"title": "preventDefault",
+							"rank": 4.5,
+							"notes": "- [w3school matches](https://www.w3schools.com/jsref/event_preventdefault.asp)\n- use for forms to block the submit button from sending the form to a new url",
+							"kind": "Event Method"
+						},
+						{
+							"title": "useCapture",
+							"rank": 1.6
+						},
+						{
+							"title": "target vs. currentTarget",
+							"rank": 2.3
+						},
+						{
+							"title": "key events",
+							"notes": "- keydown, keyup, keypress",
+							"rank": 4.4
+						},
+						{
+							"title": "mouse events",
+							"notes": "- mouseenter, mouseleave, mousedown, mousemove, mouseout, mouseover, mouseup, mousewheel",
+							"rank": 4.3
+						},
+						{
+							"title": "DOMContentLoaded",
+							"rank": 4.0
+						},
+						{
+							"title": "removeEventListener",
+							"rank": 4.1
+						},
+						{
+							"title": "resize",
+							"rank": 4.1,
+							"kind": "Event"
+						},
+						{
+							"title": "select",
+							"rank": 4.2,
+							"kind": "Event"
+						},
+						{
+							"title": "event: submit",
+							"rank": 4.1,
+							"kind": "Event"
+						},
+						{
+							"title": "documentation",
+							"rank": 4.5,
+							"notes": "- w3schools for quick, simple examples\n- MDN for in-depth details",
+							"kind": "Tip"
+						}
+					],
+					"taskItems": [
+						{
+							"title": "Make page where user can click a button that changes font family, font size, and color of the paragraph text - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks",
+							"tags": "test"
+						},
+						{
+							"title": "Make a page with a form that has First Name and Last Name, when button is clicked, first and last name are displayed on page - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/firstLastName.html",
+							"tags": "test"
+						},
+						{
+							"title": "Make a page where when user clicks in input field, it changes the background of a paragraph - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/changeBackground.html",
+							"tags": "test"
+						},
+						{
+							"title": "Write a JavaScript function to get the value of the href, hreflang, rel, target, and type attributes of the specified link, hint: document.querySelector(\"nnn\").hreflang - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/changeBackground.html",
+							"tags": "test"
+						},
+						{
+							"title": "Make a page with a button that adds a row to a table, each row has an edit button which allows you to change the value of each cell in the row - hint: insertRow, insertCell - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/table.html",
+							"tags": "test"
+						},
+						{
+							"title": "Make a dropdown control with numerous entries, make a button which removes the currently selected entry - hint: x.remove(x.selectedIndex); - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/dropdown.html",
+							"tags": "test"
+						},
+						{
+							"title": "Create a page that has a button which displays a random photo - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/randomPhoto/index.html",
+							"tags": "test"
+						},
+						{
+							"title": "Create a page that has a button that toggles the highlighting of strong tags on the page",
+							"tags": "test"
+						},
+						{
+							"title": "Create a page that shows the current width and height of the window as it is resized - hint:         let w = document.documentElement.clientWidth; let h = document.documentElement.clientHeight;",
+							"tags": "test",
+							"difficulty": 1.1,
+							"timeInMinutes": 5
+						},
+						{
+							"title": "Make a JS/DOM single-page-application site which has a navigation menu at the top with the names of pages, and each time you click a page name, it shows the appropriate page - https://github.com/edwardtanguay/livecoding-2022-03-28-tasks/blob/master/spa/index.html",
+							"difficulty": 4.3,
+							"time": 30,
+							"importance": 4.8
+						},
+						{
+							"title": "Use innerHTML und string literals to create employee cards from the Northwind database"
+						},
+						{
+							"title": "Use createElement and appendChild to create employee cards from the Northwind database"
+						},
+						{
+							"title": "Create an interactive flashcard game based on the Curriculum JSON"
+						},
+						{
+							"title": "Create a password generator"
+						},
+						{
+							"title": "Create a login page with validation and \"show password\" option"
+						},
+						{
+							"title": "Create a search machine for the HTML DOM items in Curriculum"
+						},
+						{
+							"title": "Create a three-page form which prints out the data at the end"
+						},
+						{
+							"title": "Create a bookstore to order books"
+						},
+						{
+							"title": "Create a matching-game with drag events"
+						}
+					]
+				},
+				{
+					"title": "4.02 Modules",
+					"abbreviation": "MOD",
+					"totalDays": 2,
+					"overview": "Code organization is key to maintaining large projects. In this sub module, you will explore the new ES6 module syntax, and utilize it to separate your code into small maintainable modules, as well as work with tools to ensure cross browser support and code optimization.",
+					"objectives": [
+						"Understand common use cases and advantages of separating JavaScript files into modules",
+						"Add module-based JavaScript files to an HTML document",
+						"Use ESNext syntax to import and export expressions from modules",
+						"Understand the context of package bundlers such as Webpack and Parcel",
+						"Understand and explain the advantages of using transpilers such as Babel for browser compatibility",
+						"Understand the difference between project dependencies and development dependencies",
+						"Add and use third party modules from the npm registry"
+					],
+					"resources": [],
+					"flashcards": [
+						{
+							"front": "What is an IIFE and what are two ways to write its syntax?",
+							"back": "- Immediately-Invoked Function Expression\r\n- `(function() { } )()`\r\n- `(() => { } )()`",
+							"tags": "assessment",
+							"moreInfos": [
+								{
+									"title": "MDN: IIFE",
+									"url": "https://developer.mozilla.org/en-US/docs/Glossary/IIFE"
+								}
+							]
+						},
+						{
+							"front": "How to import and export React components?",
+							"back": "- `export default MyComponent;`\r\n- `import MyComponent from \".\/MyComponent\";`",
+							"tags": "assessment"
+						},
+						{
+							"front": "How do you create a `package.json` file to set up a Node project?",
+							"back": "- `npm init`\r\n- or `npm init -y` to skip the questions",
+							"tags": "assessment"
+						}
+					],
+					"toolItems": [
+						{
+							"title": "JS/DOM-application development",
+							"notes": "- 2000-2010: driven by AJAX, JSON and then jQuery\nJS/DOM applications became increasingly larger and more complex\ncode organization became increasingly important",
+							"kind": "development"
+						},
+						{
+							"title": "global scope",
+							"kind": "concept"
+						},
+						{
+							"title": "IIFE",
+							"kind": "pattern"
+						},
+						{
+							"title": "History of JavaScript modules",
+							"kind": "development",
+							"notes": "- [JavaScript modules](https://onespace.netlify.app/techItems?id=195) - the method to separate code in JavaScript applications"
+						},
+						{
+							"title": "CommonJS vs. ES6 modules",
+							"kind": "choice"
+						},
+						{
+							"title": "defer",
+							"kind": "requirement"
+						},
+						{
+							"title": "type=\"module\"",
+							"kind": "requirement"
+						},
+						{
+							"title": "3 ways to import/export",
+							"kind": "syntax",
+							"notes": "- `import * as tools from './js/tools.js';`\n- `import getRandomNumber from './js/tools.s';`\n- `import { StarComponent } from './StarComponent.js';`\n\t- https://github.com/edwardtanguay/five-stars-rating-control/blob/master/js/main.js\n"
+						},
+						{
+							"title": "Import variables, functions, classes",
+							"kind": "Lego block metaphor"
+						},
+						{
+							"title": "MVC",
+							"kind": "software pattern",
+							"notes": "- HTML as View, JavaScript as controller\n- Model as data",
+							"importance": 4.2
+						},
+						{
+							"title": "Vite",
+							"kind": "Website creation tool",
+							"notes": "- use to create JavaScript\/DOM sites or TypeScript\/DOM sites \r\n- create site with `npm create vite` and choose from the menu\r\n- after creating, install node_modules with `npm i`\r\n- start site with `npm run dev`\r\n- be sure to put all images in e.g. `public\/images\/products\/...` and reference as `<img src=\"images\/products\/...\"\/>` in order for images to work on Netlify\r\n- you can install Sass simply with `npm i sass` and changing the file names from `.css` to .scss`",
+							"importance": 5.0
+						}
+					],
+					"days": [
+						{
+							"date": "2022-03-30",
+							"title": "Modules in JS/DOM Applications",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-03-31",
+							"title": "Vite als JS/DOM-Application Creation Tool",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.03 Asynchronous Programming",
+					"abbreviation": "ASY",
+					"overview": "The web is built on consuming data. In this sub module, you will dive into advanced JavaScript concepts such as `promises` and `async/await` through the usage of the browser's built in `fetch` API to consume data from 3rd party sources.",
+					"objectives": [
+						"Identify the key characteristics of asynchronous processes",
+						"Use `promises` and `async/await` to facilitate an asynchronous workflow",
+						"Use `fetch` to retrieve data from an API and parse JSON objects",
+						"Use `localStorage` and `sessionStorage` to save data in the browser"
+					],
+					"resources": [],
+					"flashcards": [
+						{
+							"front": "What is a JavaScript Promise?",
+							"back": "an object that represents the eventual completion or failure of an asynchronous operation and its resulting value",
+							"tags": "assessment",
+							"moreInfos": [
+								{
+									"title": "MDN: Promise",
+									"url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+								}
+							]
+						},
+						{
+							"front": "What are the three possible states of a JavaScript Promise?",
+							"back": "- fulfilled\r\n- rejected\r\n- pending",
+							"tags": "assessment",
+							"moreInfos": [
+								{
+									"title": "What are promises in JavaScript?",
+									"url": "https://www.educative.io/edpresso/what-are-promises-in-javascript"
+								}
+							]
+						},
+						{
+							"front": "What is callback hell?",
+							"back": "- when you have numerous callbacks and each callback takes an argument that is a result of a previous callbacks\r\n- in this manner, the code structure looks like a pyramid making it difficult to read and maintain",
+							"tags": "assessment",
+							"moreInfos": [
+								{
+									"title": "Stack Overflow: \"In the below code, am I in callback hell?\" / \"Yes, you are in callback hell.\"",
+									"url": "https://stackoverflow.com/questions/18095107/callback-hell-in-nodejs"
+								}
+							]
+						},
+						{
+							"front": "What are three ways to avoid callback hell?",
+							"back": "- break large functions with numerous nested callbacks into smaller functions to reduce the amount of nested code \r\n- use Promises with `.then()` syntax\r\n- use Promises with `async\/await` syntax",
+							"tags": "assessment",
+							"moreInfos": [
+								{
+									"title": "How to deal with nested callbacks and avoid callback hell",
+									"url": "https://www.freecodecamp.org/news/how-to-deal-with-nested-callbacks-and-avoid-callback-hell-1bc8dc4a2012/"
+								}
+							]
+						},
+						{
+							"front": "Are promises uses for synchronous or asynchronous operations?",
+							"back": "asynchronous",
+							"tags": "assessment"
+						},
+						{
+							"front": "Does it make sense to use try/catch blocks in a promise?",
+							"back": "No, `try/catch` is redundant in promise chains and promise executor functions.  Any error thrown is automatically converted to a rejection of the promise you're supposed to return.",
+							"tags": "assessment",
+							"moreInfos": [
+								{
+									"title": "Stack Overflow: Cleancode: try/catch in Promise",
+									"url": "https://stackoverflow.com/questions/41533993/cleancode-try-catch-in-promise"
+								}
+							]
+						},
+						{
+							"front": "What is the difference between the HTTP methods POST and GET?",
+							"back": "- GET is used to request data from a specified resource\r\n- POST is used to send data to a server to create\/update a resource",
+							"tags": "assessment"
+						},
+						{
+							"front": "What is CORS?",
+							"back": "- Cross-Origin Resource Sharing\r\n- a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served",
+							"tags": "assessment",
+							"moreInfos": [
+								{
+									"title": "Wikipedia: Cross-origin resource sharing",
+									"url": "https://en.wikipedia.org/wiki/Cross-origin_resource_sharing"
+								}
+							]
+						}
+					],
+					"days": [
+						{
+							"date": "2022-04-04",
+							"title": "Callbacks and Promises",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-05",
+							"title": "Async/Await, Fetch and Axios",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-06",
+							"title": "Consuming External APIs",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-07",
+							"title": "Consuming Local APIs  (SPA Assessment I & Exam I)",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-11",
+							"title": "DCI VACATION",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-12",
+							"title": "DCI VACATION",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-13",
+							"title": "DCI VACATION",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-14",
+							"title": "DCI VACATION",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.04 Boilerplate",
+					"abbreviation": "BOI",
+					"totalDays": 1,
+					"overview": "Creating a fully operational client side application always begins with some common code structure. In this submodule, you will bootstrap your first single-page application based on the React framework.",
+					"objectives": [
+						"Define and explain the uses of a Single-Page Application",
+						"Explain the MVC acronym with emphasis on a Single Page Application as the View layer",
+						"Understand key features of React and at its ecosystem",
+						"Use create-react-app to quickly create a React application project",
+						"Use React Developer Tools to inspect a simple React application"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-04-18",
+							"title": "Easter Monday",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-19",
+							"title": "Single Page Applications",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.05 Components",
+					"abbreviation": "COM",
+					"totalDays": 9,
+					"overview": "Understanding a user interface as a set of reusable components requires practice. In this sub module, you will gain first hand experience with creating components with state and behavior.",
+					"objectives": [
+						"Understand an application as a set of reusable components",
+						"Understand the difference between JSX and HTML",
+						"Use JSX to render components, generate lists, register event handlers and handle form data",
+						"Data flow in a React component using props and state",
+						"Compare between controlled components and uncontrolled components",
+						"Style a component using Sass and styling component libraries",
+						"Understand a single component’s lifecycle in a React application",
+						"Executing code on lifecycle stages: first rendering, update, unmount",
+						"Understand the Effect Hook to perform side effects in function components",
+						"Identify common lifecycle pitfalls and workarounds"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-04-20",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-21",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-25",
+							"title": "(Info-Session/Q&A)",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-26",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-27",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-04-28",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-02",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-03",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-04",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-05",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-09",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-10",
+							"title": "React Basics and Deep Dive",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.06 Router",
+					"abbreviation": "ROU",
+					"totalDays": 1,
+					"overview": "Most applications will incorporate several views a user can navigate through. Although it is called a single page application, multiple pages are actually common practice. In this sub module, you will integrate a third party router library into your single page application to create a multi view app.",
+					"objectives": [
+						"Compare between traditional server side routing and client side routing in a SPA",
+						"Compare and understand the difference between container components and display components",
+						"Utilize third party component libraries for react",
+						"Use react router to add routes and create a multi-view SPA as well as parameter based routing"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-05-11",
+							"title": "React Router",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-12",
+							"title": "React Router",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.07 Store",
+					"abbreviation": "STO",
+					"totalDays": 2,
+					"overview": "Handling state in most applications is a confusing and often error prone task. Luckily, with third party state containers such as Redux, this task can become a breeze. In this sub module, you will implement various technologies in your single page applications to ensure proper state updates and consistant behavior.",
+					"objectives": [
+						"Understand the role and uses for a state container in a SPA",
+						"Save and retrieve persistent data from localStorage",
+						"Manage state container with useReducer() and Context API"
+					],
+					"resources": [],
+					"days": [
+						{
+							"date": "2022-05-16",
+							"title": "React State",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-17",
+							"title": "React State",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-18",
+							"title": "React State",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-19",
+							"title": "React State",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.08 Deployment",
+					"abbreviation": "DEP",
+					"totalDays": 1,
+					"overview": "The power of a single page application comes from the fact that is runs entirely on the client side, and as such, it can be served from any static server. In this sub module, you will deploy a single page application to Netlify, as well as learn about the differences between a development and production environment.",
+					"objectives": [
+						"Understand the role of a Single Page application as a “static” program",
+						"Upload and deploy Single Page applications to Netlify",
+						"Identify common pitfalls with client side routing and Netlify pages and work around those pitfalls"
+					],
+					"resources": [],
+					"days": [
+						{
+							"date": "2022-05-23",
+							"title": "Deploying to External Servers",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-24",
+							"title": "Deploying to External Servers",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-25",
+							"title": "Deploying to External Servers",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-26",
+							"title": "Christi Himmelfahrt",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.09 Workshop Week",
+					"abbreviation": "WOR",
+					"totalDays": 4,
+					"overview": "You have four days to work on technology of your choice which is not covered in the curriculum. I will be offering live-codings and exercises in various technologies throughout the week. Participation in these is optional.",
+					"objectives": [
+						"Acquire experience in technologies outside the DCI curriculum",
+						"Gain a basic understanding of and be able to talk about technologies outside the MERN stack"
+					],
+					"resources": [],
+					"days": [
+						{
+							"date": "2022-05-30",
+							"title": "Workshops/Projects",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-05-31",
+							"title": "Workshops/Projects",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-06-01",
+							"title": "Workshops/Projects",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-06-02",
+							"title": "Workshops/Projects",
+							"videos": [],
+							"activities": []
+						}
+					]
+				},
+				{
+					"title": "4.10 Project Week",
+					"abbreviation": "PRO",
+					"totalDays": 4,
+					"overview": "SPA project week is free time for you to develop your own project. This should be a project that uses the skills learned during the Single-Page-Application module but also important is that it is a project that you are personally interested and invested in. Ideally it is a combination of both.",
+					"objectives": [
+						"Plan, design and develop a project of your choice"
+					],
+					"resources": [],
+					"flashcards": [],
+					"days": [
+						{
+							"date": "2022-06-06",
+							"title": "Pfingstmontag",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-06-07",
+							"title": "DCI Vacation",
+							"kind": "freeDay",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-06-08",
+							"title": "Workshops/Projects",
+							"videos": [],
+							"activities": []
+						},
+						{
+							"date": "2022-06-09",
+							"title": "Workshops/Projects",
+							"videos": [],
+							"activities": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "5. Backend",
+			"abbreviation": "BE"
+		},
+		{
+			"title": "6. Final Project",
+			"abbreviation": "FP"
+		}
+	]
+}

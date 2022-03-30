@@ -1,0 +1,18 @@
+- Learn Items: make "instruction order" different from "rank order" (importance)
+- bug: two fieldset.toolItems in schedule.scss
+- bug: 14 of 15 in Flashcards
+- bug: flashcards: Warning: Each child in a list should have a unique "key" prop.
+
+- fix vulnerabilities in old create-react-version
+	- update to new create-react-version?
+	- update to Vite?
+- bring Site.tsx in App.tsx, delete Site.tsx
+- bring all PageComponents in /pages
+- deine eigene Seite einbauen?
+
+-bugs:
+ src\App.tsx
+  Line 4:13:  'config' is defined but never used  @typescript-eslint/no-unused-vars
+src\components\ToolItems.tsx
+  Line 5:10:  'IoCheckmark' is defined but never used  @typescript-eslint/no-unused-vars
+

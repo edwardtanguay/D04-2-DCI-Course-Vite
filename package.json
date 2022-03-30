@@ -1,0 +1,34 @@
+{
+	"name": "d04-2-dci-course-vite",
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@babel/core": "^7.17.8",
+		"@types/markdown-it": "^12.2.3",
+		"markdown": "^0.5.0",
+		"markdown-it": "^12.3.2",
+		"minimist": "^1.2.5",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-icons": "^4.2.0",
+		"react-loader-spinner": "^4.0.0",
+		"react-router-dom": "^5.2.0",
+		"request": "^2.81.0",
+		"sass": "^1.35.1",
+		"ts-node": "^10.0.0",
+		"typescript": "^4.3.4"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.33",
+		"@types/react-dom": "^17.0.10",
+		"@types/react-router-dom": "^5.3.3",
+		"@vitejs/plugin-react": "^1.0.7",
+		"typescript": "^4.5.4",
+		"vite": "^2.8.0"
+	}
+}

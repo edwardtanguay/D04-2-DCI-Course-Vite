@@ -1,0 +1,835 @@
+$activityFontColor: rgb(201, 53, 53);
+$dciLinkAreaColor: #888;
+$mentoringColor: orange;
+$freeDayColor: rgb(105, 150, 219);
+$dayTitleColor: #fff;
+$overviewBackgroundColor: rgb(59, 3, 59);
+$flashcardsBackgroundColor: darkgreen;
+$resourcesBackgroundColor: #911010;
+$objectivesBackgroundColor: #1f497d;
+$taskItemsBackgroundColor: #ac2626;
+$toolItemsBackgroundColor: #9c7d28;
+$flashcardTopBackgroundColor: rgb(50, 168, 50);
+
+$flashcardBottomBackgroundColor: rgb(103, 209, 103);
+$flashcardBottomMoreInfosColor: rgb(155, 229, 155);
+
+$toolItemTopBackgroundColor: rgb(199, 175, 68);
+$toolItemBottomBackgroundColor: rgb(212, 199, 161);
+
+.page_schedule {
+	// .outline {
+	// 	background: #fafafa;
+	// 	margin: 0 0 0 15px;
+	// 	padding: 15px 15px 15px 5px;
+	// 	border-radius: 5px;
+	// 	border: 1px solid #eee;
+	// 	ul {
+	// 		margin: 0 0 0 30px;
+	// 		list-style: disc;
+	// 		li {
+	// 			margin: 5px 0 0 0;
+	// 		}
+	// 	}
+	// }
+	code {
+		font-family: "Courier New", Courier, monospace;
+		background-color: #ddd;
+	}
+	h1 {
+		margin: 15px 0 0 0;
+	}
+	h2 {
+		background-color: #333;
+		margin: 20px 0 10px 0;
+		font-weight: bold;
+		font-size: 2rem;
+		color: #ccc;
+		position: relative;
+		.previewIcons {
+			position: absolute;
+			display: inline-flex;
+			font-size: 1rem;
+			font-weight: normal;
+			margin: 5px 0 0 11px;
+			div {
+				padding: 5px;
+				min-width: 15px;
+				border-radius: 5px;
+				text-align: center;
+				margin: 0 5px 0 0;
+			}
+			div.previewIconOverview {
+				background-color: $overviewBackgroundColor;
+			}
+			div.previewIconObjectives {
+				background-color: $objectivesBackgroundColor;
+			}
+			div.previewIconResources {
+				background-color: $resourcesBackgroundColor;
+			}
+			div.previewIconFlashcards {
+				background-color: $flashcardsBackgroundColor;
+			}
+			div.previewIconTaskItems {
+				background-color: $taskItemsBackgroundColor;
+			}
+			div.previewIconToolItems {
+				background-color: $toolItemsBackgroundColor;
+			}
+		}
+		.dayString {
+			display: block;
+			font-weight: normal;
+			font-size: 1rem;
+			margin: 3px 0 0 0;
+			.theListDay.class {
+				color: yellow;
+			}
+			.theListDay.mentoring {
+				color: $mentoringColor;
+			}
+			.theListDay.freeDay {
+				color: $freeDayColor;
+			}
+		}
+	}
+	div.overviewCollapsed {
+		margin: 15px 0 15px 10px;
+		span {
+			background-color: $overviewBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+	fieldset.overview {
+		margin: 0 0 10px 10px;
+		border: 3px solid $overviewBackgroundColor;
+		background: #ddd;
+		border-radius: 5px;
+		padding: 15px;
+		width: 600px;
+		font-style: italic;
+
+		legend {
+			background-color: $overviewBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+		li {
+			list-style: disc;
+			margin: 0 0 10px 25px;
+			code {
+				background-color: #ccc;
+			}
+		}
+	}
+	div.flashcardsCollapsed {
+		margin: 15px 0 15px 10px;
+		span.pill {
+			background-color: $flashcardsBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+	fieldset.flashcards {
+		margin: 0 0 10px 10px;
+		border: 3px solid $flashcardsBackgroundColor;
+		background: #ddd;
+		border-radius: 5px;
+		padding: 15px;
+		width: 600px;
+
+		.flashcardGroup {
+			div.flashcardItem {
+				margin: 0 0 10px 0;
+				line-height: 1.3rem;
+				div.outlineText {
+					padding: 0 10px 0 0;
+					textarea {
+						width: 100%;
+						height: 200px;
+						border-radius: 5px;
+					}
+					.escapeLink {
+						text-align: right;
+						font-size: 0.9rem;
+					}
+				}
+				div.front {
+					background-color: $flashcardTopBackgroundColor;
+					border-radius: 5px 5px 0 0;
+					padding: 10px;
+					cursor: pointer;
+					.header {
+						display: flex;
+						justify-content: space-between;
+						div.label {
+							color: rgb(2, 31, 2);
+							font-size: 0.8rem;
+							text-shadow: 0 0 7px #fff;
+						}
+						div.assessmentTag {
+							color: rgb(209, 2, 2);
+							font-size: 0.8rem;
+							text-shadow: 0 0 7px #fff;
+						}
+						div.knowThisMessage {
+							font-size: 0.8rem;
+						}
+					}
+				}
+				div.back {
+					background-color: $flashcardBottomBackgroundColor;
+					padding: 10px;
+					code {
+						background-color: transparent;
+						color: brown;
+					}
+					img {
+						border: 0;
+						border-radius: 5px;
+						margin: 10px 0 0 0;
+					}
+				}
+				div.withoutMoreInfos {
+					border-radius: 0 0 5px 5px;
+				}
+				div.withMoreInfos {
+					border-radius: 0;
+				}
+				div.moreInfos {
+					background-color: $flashcardBottomMoreInfosColor;
+					border-radius: 0 0 5px 5px;
+					font-size: 0.9rem;
+					font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+					span.moreInfosLabel {
+						color: brown;
+					}
+					a {
+						font-style: italic;
+					}
+				}
+			}
+		}
+
+		legend {
+			background-color: $flashcardsBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+		li {
+			list-style: disc;
+			margin: 0 0 10px 25px;
+			code {
+				background-color: #ccc;
+			}
+		}
+	}
+
+	fieldset.toolItems {
+		margin: 0 0 10px 10px;
+		border: 3px solid $flashcardsBackgroundColor;
+		background: red;
+		border-radius: 5px;
+		padding: 15px;
+		width: 900px;
+
+		.toolItemGroup {
+			div.toolItem {
+				margin: 0 0 10px 0;
+				line-height: 1.3rem;
+				div.outlineText {
+					padding: 0 10px 0 0;
+					textarea {
+						width: 100%;
+						height: 200px;
+						border-radius: 5px;
+					}
+					.escapeLink {
+						text-align: right;
+						font-size: 0.9rem;
+					}
+				}
+				div.front {
+					background-color: $toolItemTopBackgroundColor;
+					border-radius: 5px 5px 0 0;
+					padding: 10px;
+					cursor: pointer;
+					.header {
+						display: flex;
+						justify-content: space-between;
+						div.label {
+							color: rgb(2, 31, 2);
+							font-size: 0.8rem;
+							text-shadow: 0 0 7px #fff;
+							span.title {
+								font-size: 1.5rem;
+								color: navy;
+							}
+							span.kind {
+								color: #333;
+								font-size: 1rem;
+							}
+							span.stars {
+								color: #333;
+								font-size: 1rem;
+							}
+						}
+						div.assessmentTag {
+							color: rgb(209, 2, 2);
+							font-size: 0.8rem;
+							text-shadow: 0 0 7px #fff;
+						}
+						div.knowThisMessage {
+							font-size: 0.8rem;
+						}
+					}
+				}
+				div.notes {
+					background-color: $toolItemBottomBackgroundColor;
+					padding: 10px;
+					code {
+						background-color: transparent;
+						color: brown;
+					}
+					img {
+						border: 0;
+						border-radius: 5px;
+						margin: 10px 0 0 0;
+					}
+				}
+			}
+		}
+	}
+
+	div.objectivesCollapsed {
+		margin: 15px 0 15px 10px;
+		span {
+			background-color: $objectivesBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+	fieldset.objectives {
+		margin: 0 0 10px 10px;
+		border: 3px solid $objectivesBackgroundColor;
+		background: #ddd;
+		border-radius: 5px;
+		padding: 15px;
+		width: 600px;
+
+		legend {
+			background-color: $objectivesBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+		li {
+			list-style: disc;
+			margin: 0 0 10px 25px;
+			code {
+				background-color: #ccc;
+			}
+		}
+	}
+	div.taskItemsCollapsed {
+		margin: 15px 0 15px 10px;
+		span.pill {
+			background-color: $taskItemsBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+	div.toolItemsCollapsed {
+		margin: 15px 0 15px 10px;
+		span.pill {
+			background-color: $toolItemsBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+	fieldset.taskItems {
+		margin: 0 0 10px 10px;
+		border: 3px solid $taskItemsBackgroundColor;
+		background: #ddd;
+		border-radius: 5px;
+		padding: 15px;
+		width: 600px;
+
+		legend {
+			background-color: $taskItemsBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+		li {
+			list-style: disc;
+			margin: 0 0 10px 25px;
+			code {
+				background-color: #ccc;
+			}
+		}
+	}
+	fieldset.toolItems {
+		margin: 0 0 10px 10px;
+		border: 3px solid $toolItemsBackgroundColor;
+		background: #ddd;
+		border-radius: 5px;
+		padding: 15px;
+		width: 700px;
+
+		legend {
+			background-color: $toolItemsBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+		li {
+			list-style: disc;
+			margin: 0 0 10px 25px;
+			code {
+				background-color: #ccc;
+			}
+		}
+	}
+	div.resourcesCollapsed {
+		margin: 15px 0 15px 10px;
+		span {
+			background-color: $resourcesBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+	fieldset.resources {
+		margin: 0 0 0 10px;
+		border: 3px solid $resourcesBackgroundColor;
+		background: #ddd;
+		border-radius: 5px;
+		padding: 15px;
+		width: 600px;
+
+		legend {
+			background-color: $resourcesBackgroundColor;
+			color: #fff;
+			padding: 5px 8px;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+		.resourceListArea {
+			.singleResourceArea {
+				.iconLinkRow {
+					display: flex;
+					align-items: flex-start;
+					position: relative;
+					margin: 0 0 17px 0;
+					img {
+						width: 20px;
+						margin: 2px 5px 0 0;
+					}
+					.time {
+						font-size: 0.6rem;
+						position: absolute;
+						top: 17-px;
+						right: 580px;
+						color: #666;
+					}
+				}
+				ul.resourceNotes {
+					margin-left: 12px;
+					code {
+						background-color: #eee;
+						font-size: 0.8rem;
+					}
+					li.note {
+						list-style-type: disc;
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+	section.submodule {
+		margin: 0 0 0 40px;
+		h2 {
+			cursor: pointer;
+			padding: 15px;
+			min-width: 695px;
+		}
+		section.day.past h3 {
+			background-color: #777;
+		}
+		section.day.mentoring h3 {
+			background-color: #444 !important;
+			color: $mentoringColor;
+		}
+		section.day.mentoring h3 span.dayTitle {
+			color: $mentoringColor;
+			font-style: normal;
+		}
+		section.day.freeDay h3 {
+			background-color: #444 !important;
+			color: $freeDayColor;
+		}
+		section.day.freeDay h3 span.dayTitle {
+			color: $freeDayColor;
+			font-style: normal;
+		}
+		.informAmount {
+			color: #555;
+			font-size: 0.9rem;
+			display: inline-block;
+			margin-left: 8px;
+		}
+		.activity {
+			.outlineWrapper {
+				margin: -10px 0 10px 70px;
+			}
+			.outline p {
+				margin: 15px 0 0 18px;
+			}
+		}
+		section.days {
+			h3 {
+				color: yellow;
+				padding: 10px;
+				font-size: 1.5rem;
+				border-radius: 5px;
+				margin: 10px 0 10px 10px;
+				cursor: pointer;
+				position: relative;
+				span.dayTitle {
+					color: $dayTitleColor;
+					font-style: italic;
+					font-size: 1.2rem;
+					display: inline-block;
+					margin-left: 10px;
+				}
+				.exerciseStatusItems {
+					margin-left: 15px;
+					.exerciseStatusItem {
+						margin-left: 15px;
+						.exerciseNumber {
+							color: black;
+							font-size: 1rem;
+							font-weight: bold;
+						}
+						position: relative;
+						.numberGroup {
+							background-color: #333;
+							font-size: 0.7rem;
+							display: inline-block;
+							margin-left: 2px;
+							padding: 2px 4px;
+							border-radius: 4px;
+							margin-top: -14px;
+							.slash {
+								color: #ccc;
+							}
+							.finished {
+								color: lightgreen;
+							}
+							.unfinished {
+								color: tomato;
+							}
+						}
+					}
+				}
+			}
+			.videoPreview {
+				margin: 0 0 0 15px;
+				span {
+					color: black;
+					margin: 0 0 0 5px;
+				}
+			}
+			h3 span.todayLabel {
+				color: lightgreen !important;
+				font-size: 2rem;
+				font-variant: small-caps;
+				top: 3px;
+				right: 17px;
+				display: inline-block;
+				margin-left: 20px;
+				font-style: italic;
+			}
+			section.day.today h3 {
+				background-color: #444;
+				color: lightgreen;
+				border: 4px solid green;
+			}
+			section.day.future h3 {
+				background-color: #555;
+			}
+			.bulkTopics {
+				font-size: 0.8rem;
+				margin: 0 0 0 20px;
+				color: #444;
+				border-left: 1px solid #ddd;
+				padding-left: 10px;
+			}
+			.videoArea {
+				display: flex;
+				&:hover * {
+					color: rgb(5, 97, 5) !important;
+					cursor: pointer;
+				}
+				.videoIcon {
+					color: #333;
+					font-size: 3rem;
+					margin: 0 0 0 10px;
+				}
+				.videoDescription {
+					margin: 13px 0 5px 7px;
+					color: #333;
+				}
+				.videoExtra {
+					font-size: 0.8rem;
+					font-style: italic;
+					margin: 0 0 0 5px;
+					color: #333;
+				}
+			}
+			section.activities {
+				margin: 0 0 0 15px;
+				div.statusArea {
+					background-color: #333;
+					padding: 8px;
+					border-radius: 5px;
+					margin: 0 0 3px 15px;
+					font-size: 0.8rem;
+					div.finished {
+						color: lightgreen;
+						margin: 0 0 3px 0;
+					}
+					div.unfinished {
+						color: tomato;
+					}
+				}
+				div.activity {
+					display: flex;
+					margin: 15px 0 15px 0;
+				}
+				img.screenshot {
+					margin: 0 0 20px 0;
+					width: 200px;
+					box-shadow: 1px 1px 9px 1px #ccc;
+				}
+				.codeLink a {
+					color: #333;
+					font-size: 0.8rem;
+				}
+
+				.codeLink {
+					margin: -19px 0 0 0;
+				}
+				.cancelledReason {
+					color: red;
+					width: 200px;
+					font-size: 0.7rem;
+					margin: -14px 0 0 0px;
+				}
+				margin-top: 20px;
+				.cancelled h4,
+				.cancelled h4 span {
+					color: #555;
+				}
+				span.theRank {
+					font-size: 1rem;
+					color: #999;
+					display: inline-block;
+				}
+				span.cancelled {
+					color: red;
+					&:before {
+						content: "-";
+					}
+				}
+				.description {
+					font-variant: normal;
+					font-weight: normal;
+					margin: 0 0 10px 15px;
+					font-style: italic;
+					color: #555;
+				}
+				h4 {
+					font-variant: small-caps;
+					margin: 0 0 5px 15px;
+					font-size: 1.2rem;
+					color: $activityFontColor;
+					font-weight: bold;
+					span.title {
+						font-weight: normal;
+					}
+				}
+
+				.outlineCopyText {
+					margin: 0 0 0 15px;
+					width: 700px;
+					height: 104px;
+				}
+				.escapeLink {
+					background-color: #ddd;
+					color: brown;
+					margin: 0 0 0 15px;
+					font-size: 0.7rem;
+					padding: 3px 3px 6px 6px;
+				}
+				h4.activityKindExercise {
+					color: black;
+				}
+				a.activityUrl {
+					font-size: 1.4rem;
+					margin: 0 0 10px 15px;
+					display: block;
+				}
+				.adminMessage {
+					color: red;
+					margin: 0 0 10px 15px;
+				}
+				.exerciseCodeArea {
+					margin: 0 0 10px 15px;
+				}
+				.exerciseCodeArea input {
+					font-size: 1.3rem;
+					width: 700px;
+				}
+				.readmeTitle {
+					margin: 0 0 0 15px;
+					font-family: "Courier New", Courier, monospace;
+					font-size: 0.8rem;
+					color: #777;
+				}
+				.readmeCopyText {
+					margin: 0 0 0 15px;
+					width: 700px;
+					height: 104px;
+				}
+
+				section.topics {
+					ul {
+						margin: 0 0 0 40px;
+						li {
+							list-style-type: disc;
+							font-size: 1.2rem;
+							margin-bottom: 10px;
+						}
+					}
+					ul.topicNotes li {
+						font-size: 0.9rem;
+						margin: 5px 0 0 0;
+					}
+				}
+			}
+
+			.time {
+				margin: 0 0 10px 30px;
+				font-family: "Courier New", Courier, monospace;
+			}
+			.rawTopics {
+				margin: 0 0 0 30px;
+				font-family: "Courier New", Courier, monospace;
+			}
+			fieldset.dciLinkArea {
+				margin: 15px 0 15px 15px;
+				border: 3px solid $dciLinkAreaColor;
+				background: #ddd;
+				border-radius: 5px;
+				padding: 15px;
+
+				legend {
+					background-color: $dciLinkAreaColor;
+					color: #fff;
+					padding: 5px 8px;
+					border-radius: 5px;
+					margin-left: 10px;
+					cursor: pointer;
+				}
+
+				li {
+					list-style: disc;
+					margin: 0 0 10px 25px;
+				}
+			}
+		}
+	}
+	.commandPanel {
+		position: absolute;
+		top: 114px;
+		right: 25px;
+		cursor: pointer;
+		font-size: 0.8rem;
+		color: #ddd;
+		height: 14px;
+		width: 43px;
+	}
+	.adminPanel {
+		margin: 40px 0 0 0;
+		padding: 30px 0 0 0;
+		border-top: 4px dotted #ccc;
+		h1 {
+			font-family: "Courier New", Courier, monospace;
+			margin: 0 0 10px 0;
+			color: #888;
+		}
+		.adminContainer {
+			background-color: #777;
+			color: #fff;
+			border-radius: 5px;
+			padding: 20px;
+			h2 {
+				background-color: transparent;
+				margin: 0;
+			}
+			select.classBookEntryDate {
+				margin: 0 0 0 20px;
+				font-size: 1.5rem;
+			}
+			.classBookCopyText {
+				outline: 0px;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid #777;
+				display: block;
+				width: 1275px;
+				margin: 10px 0 0 0;
+				height: 300px;
+				&:focus {
+					border: 1px solid #222;
+					background-color: #ccc;
+					box-shadow: inset 1px 1px 9px #666;
+				}
+			}
+		}
+	}
+}
